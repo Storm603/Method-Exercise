@@ -1,0 +1,35 @@
+﻿using System;
+using System.Numerics;
+
+namespace _08._Factorial_Division
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numberOne = int.Parse(Console.ReadLine());
+            int numberTwo = int.Parse(Console.ReadLine());
+
+            double resultOne = FactorialCalculationNumbers(numberOne);
+            double resultTwo = FactorialCalculationNumbers(numberTwo);
+
+            double result =  resultOne / resultTwo;
+
+            Console.WriteLine($"{result:f2}");
+        }
+
+        static double FactorialCalculationNumbers(int number)
+        {
+            double numbers = 0;
+
+            for (int i = number - 1; i >= -1; i++)
+            {
+                int digit = number * i;
+                number = digit;
+                numbers = number;
+            }
+            
+            return numbers;
+        }
+    }
+}
